@@ -1,0 +1,37 @@
+<div class="gallery">
+  <div class="container">
+    <h1>Clientes Satisfechos</h1>
+    <p class="subtitle">Testimonios reales de personas que confiaron en nosotros</p>
+
+    <div class="gallery-grid">
+      <div class="gallery-item" *ngFor="let image of images; let i = index" (click)="openModal(i)">
+        <div class="image-placeholder" [style.background]="image.gradient">
+          <img [src]="image.image" [alt]="image.title" class="client-photo">
+        </div>
+        <div class="overlay">
+          <p class="client-name">{{image.title}}</p>
+          <div class="rating">
+            <span *ngFor="let star of [1,2,3,4,5]">⭐</span>
+          </div>
+          <p class="product-name">{{image.product}}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" *ngIf="isModalOpen" (click)="closeModal()">
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <div class="modal-image" [style.background]="images[selectedImage].gradient">
+          <img [src]="images[selectedImage].image" [alt]="images[selectedImage].title" class="client-photo modal-photo">
+        </div>
+        <h2>{{images[selectedImage].title}}</h2>
+        <div class="modal-rating">
+          <span *ngFor="let star of [1,2,3,4,5]">⭐</span>
+        </div>
+        <p class="modal-product"><strong>Producto:</strong> {{images[selectedImage].product}}</p>
+        <p class="modal-testimonial">"{{images[selectedImage].description}}"</p>
+      </div>
+    </div>
+  </div>
+</div>

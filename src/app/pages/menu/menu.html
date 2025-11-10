@@ -1,0 +1,21 @@
+<div class="menu">
+  <div class="container">
+    <h1>Nuestro Menú</h1>
+    <p class="subtitle">Deliciosas opciones para ti</p>
+
+    <div class="menu-categories">
+      <div class="category" *ngFor="let category of menuCategories">
+        <h2>{{category.icon}} {{category.name}}</h2>
+        <div class="menu-items">
+          <div class="menu-item" *ngFor="let item of category.items">
+            <div class="item-info">
+              <h3>{{item.name}}</h3>
+              <p>{{item.description}}</p>
+            </div>
+            <span class="item-price">{{item.price}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

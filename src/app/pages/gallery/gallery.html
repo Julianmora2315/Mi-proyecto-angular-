@@ -1,36 +1,66 @@
 <div class="gallery">
   <div class="container">
-    <h1>Clientes Satisfechos</h1>
-    <p class="subtitle">Testimonios reales de personas que confiaron en nosotros</p>
+    <h1>Cobertura Nacional</h1>
+    <p class="subtitle">Realizamos entregas a las principales ciudades de Colombia</p>
 
-    <div class="gallery-grid">
-      <div class="gallery-item" *ngFor="let image of images; let i = index" (click)="openModal(i)">
-        <div class="image-placeholder" [style.background]="image.gradient">
-          <img [src]="image.image" [alt]="image.title" class="client-photo">
-        </div>
-        <div class="overlay">
-          <p class="client-name">{{image.title}}</p>
-          <div class="rating">
-            <span *ngFor="let star of [1,2,3,4,5]">⭐</span>
+    <div class="coverage-container">
+      <!-- Mapa de Colombia -->
+      <div class="map-container">
+        <div class="colombia-map">
+          <!-- SVG simplificado de Colombia -->
+          <svg class="map-svg" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100,20 L120,40 L140,35 L150,50 L145,70 L160,90 L165,110 L155,130 L160,150 L150,170 L145,190 L135,210 L125,230 L115,250 L105,265 L95,270 L85,265 L75,250 L65,235 L55,220 L50,200 L45,180 L40,160 L35,140 L40,120 L45,100 L50,80 L60,60 L70,45 L80,35 L90,28 Z"/>
+          </svg>
+
+          <!-- Pins de ciudades -->
+          <div 
+            *ngFor="let city of cities; let i = index" 
+            class="city-pin" 
+            [class.active]="selectedCity === i"
+            [style.top]="city.top" 
+            [style.left]="city.left"
+            (click)="selectCity(i)">
+            <div class="pin-dot"></div>
+            <div class="pin-label">{{city.name}}</div>
           </div>
-          <p class="product-name">{{image.product}}</p>
         </div>
       </div>
-    </div>
 
-    <!-- Modal -->
-    <div class="modal" *ngIf="isModalOpen" (click)="closeModal()">
-      <div class="modal-content" (click)="$event.stopPropagation()">
-        <span class="close" (click)="closeModal()">&times;</span>
-        <div class="modal-image" [style.background]="images[selectedImage].gradient">
-          <img [src]="images[selectedImage].image" [alt]="images[selectedImage].title" class="client-photo modal-photo">
+      <!-- Lista de ciudades -->
+      <div class="cities-list">
+        <div 
+          *ngFor="let city of cities; let i = index" 
+          class="city-card"
+          [class.active]="selectedCity === i"
+          (click)="selectCity(i)">
+          
+          <div class="city-header">
+            <h3 class="city-name">{{city.name}}</h3>
+            <span class="free-badge" *ngIf="city.isFree">Envío Gratis</span>
+          </div>
+
+          <div class="city-info">
+            <div class="info-item">
+              <span class="info-icon">🚚</span>
+              <div class="info-content">
+                <span class="info-label">Tiempo de entrega</span>
+                <span class="info-value">{{city.deliveryTime}}</span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <span class="info-icon">💰</span>
+              <div class="info-content">
+                <span class="info-label">Costo de envío</span>
+                <span class="info-value" [class.free]="city.isFree" [class.paid]="!city.isFree">
+                  {{city.shippingCost}}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <p class="city-description">{{city.description}}</p>
         </div>
-        <h2>{{images[selectedImage].title}}</h2>
-        <div class="modal-rating">
-          <span *ngFor="let star of [1,2,3,4,5]">⭐</span>
-        </div>
-        <p class="modal-product"><strong>Producto:</strong> {{images[selectedImage].product}}</p>
-        <p class="modal-testimonial">"{{images[selectedImage].description}}"</p>
       </div>
     </div>
   </div>

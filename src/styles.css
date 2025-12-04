@@ -1,48 +1,45 @@
+/* ============================================
+   SCROLLBAR PERSONALIZADO - ROJO
+============================================ */
+
+/* Para navegadores webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff6b6b;
+  border-radius: 10px;
+  border: 2px solid #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff5252;
+  box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #ff3838;
+}
+
+/* Para Firefox */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #ff6b6b #1a1a1a;
 }
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f7fafc;
-  color: #2d3748;
-}
-
-html, body {
-  height: 100%;
-}
-
+/* Opcional: Hacer la scrollbar más delgada en hover */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+  transition: width 0.3s;
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #667eea;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #5568d3;
-}
-::-webkit-scrollbar {
-  width: 12px; 
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
-
-::-webkit-scrollbar-thumb {
-  background: #567cd5; 
-  border-radius: 6px; 
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #5c92cc; 
+::-webkit-scrollbar:hover {
+  width: 12px;
 }

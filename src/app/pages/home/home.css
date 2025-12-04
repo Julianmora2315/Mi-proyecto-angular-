@@ -3,44 +3,52 @@
 }
 
 .hero {
-  background: linear-gradient(135deg, #215cc9 0%, #dfdbd9 100%);
-  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #2d2d2d 100%);
+  padding: 5.5rem 2rem;
   text-align: center;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 2.8rem;
+  margin-bottom: 1.2rem;
   animation: fadeInDown 1s;
+  font-weight: 800;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 .hero-content p {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
   animation: fadeInUp 1s;
+  opacity: 0.9;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .btn-primary {
-  background: white;
-  color: #000000;
+  background: #ef4444;
+  color: #ffffff;
   border: none;
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
-  border-radius: 50px;
+  padding: 0.9rem 2.2rem;
+  font-size: 1rem;
+  border-radius: 30px;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 700;
   transition: all 0.3s;
   animation: fadeInUp 1.2s;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.6);
+  background: #dc2626;
 }
 
 .features {
-  padding: 4rem 2rem;
+  padding: 4.5rem 2rem;
+  background: #1a1a1a;
 }
 
 .container {
@@ -50,45 +58,60 @@
 
 .features h2 {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #2d3748;
+  font-size: 2.3rem;
+  margin-bottom: 3.5rem;
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
 }
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
 }
 
 .feature-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
+  background: #2d2d2d;
+  padding: 2.5rem 2rem;
+  border-radius: 15px;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
   transition: all 0.3s;
+  border: 2px solid #3d3d3d;
 }
 
 .feature-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  border-color: #ef4444;
+  background: #333333;
 }
 
 .icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 3.5rem;
+  margin-bottom: 1.2rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
 }
 
 .feature-card h3 {
-  color: #667eea;
-  margin-bottom: 0.5rem;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.feature-card p {
+  color: #d1d5db;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 @keyframes fadeInDown {
   from {
     opacity: 0;
-    transform: translateY(-30px);
+    transform: translateY(-25px);
   }
   to {
     opacity: 1;
@@ -99,10 +122,24 @@
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(25px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+  
+  .features h2 {
+    font-size: 2rem;
   }
 }

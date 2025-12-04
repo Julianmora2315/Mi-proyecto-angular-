@@ -1,0 +1,139 @@
+<!-- CONTENEDOR GENERAL DEL FORMULARIO (Bootstrap) -->
+<div class="container py-4">
+  <div class="row justify-content-center">
+    <!-- Columnas responsivas para centrar el formulario -->
+    <div class="col-12 col-md-8 col-lg-6">
+
+      <!-- TÍTULO DEL FORMULARIO -->
+      <h3 class="text-center mb-4">Formulario de Contacto</h3>
+
+      <!-- FORMULARIO REACTIVO DE ANGULAR -->
+      <!-- [formGroup]="contactForm" -> Conecta este formulario con el FormGroup del .ts -->
+      <!-- (ngSubmit)="enviar()"   -> Ejecuta enviar() cuando se presiona ENVIAR -->
+      <!-- novalidate             -> Quita validación HTML nativa, usamos 100% Angular -->
+      <form [formGroup]="contactForm" (ngSubmit)="enviar()" novalidate>
+
+        <!-- ============================================================
+             CAMPO: NOMBRE
+        ============================================================ -->
+        <div class="mb-3">
+          <!-- Etiqueta -->
+          <label for="nombre" class="form-label">Nombre</label>
+
+          <!-- INPUT DE NOMBRE -->
+          <!-- formControlName="nombre": conecta este input con el FormControl 'nombre' -->
+          <!-- class.is-invalid: muestra borde rojo si el campo es inválido Y ya fue tocado -->
+          <input id="nombre" type="text" class="form-control" formControlName="nombre"
+            [class.is-invalid]="f.nombre.invalid && f.nombre.touched" />
+
+          <!-- MENSAJES DE ERROR -->
+          <!-- *ngIf: solo se muestra si fue tocado y tiene errores -->
+          <div class="invalid-feedback" *ngIf="f.nombre.touched && f.nombre.errors">
+
+            <!-- Error: required -->
+            <div *ngIf="f.nombre.errors?.required">
+              El nombre es obligatorio.
+            </div>
+
+            <!-- Error: minlength -->
+            <div *ngIf="f.nombre.errors?.minlength">
+              Mínimo {{ f.nombre.errors?.minlength?.requiredLength }} caracteres.
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             CAMPO: EMAIL
+        ============================================================ -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo</label>
+
+          <!-- type="email": ayuda a validar formato correctamente -->
+          <input id="email" type="email" class="form-control" formControlName="email"
+            [class.is-invalid]="f.email.invalid && f.email.touched" />
+
+          <div class="invalid-feedback" *ngIf="f.email.touched && f.email.errors">
+
+            <!-- Error: required -->
+            <div *ngIf="f.email.errors?.required">
+              El correo es obligatorio.
+            </div>
+
+            <!-- Error: email -->
+            <div *ngIf="f.email.errors?.email">
+              Formato de correo inválido.
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             CAMPO: ASUNTO
+        ============================================================ -->
+        <div class="mb-3">
+          <label for="asunto" class="form-label">Asunto</label>
+
+          <input id="asunto" type="text" class="form-control" formControlName="asunto"
+            [class.is-invalid]="f.asunto.invalid && f.asunto.touched" />
+
+          <div class="invalid-feedback" *ngIf="f.asunto.touched && f.asunto.errors">
+
+            <!-- Error: required -->
+            <div *ngIf="f.asunto.errors?.required">
+              El asunto es obligatorio.
+            </div>
+
+            <!-- Error: minlength -->
+            <div *ngIf="f.asunto.errors?.minlength">
+              Mínimo {{ f.asunto.errors?.minlength?.requiredLength }} caracteres.
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             CAMPO: MENSAJE
+        ============================================================ -->
+        <div class="mb-3">
+          <label for="mensaje" class="form-label">Mensaje</label>
+
+          <!-- TEXTAREA: para mensajes largos -->
+          <textarea id="mensaje" rows="4" class="form-control" formControlName="mensaje"
+            [class.is-invalid]="f.mensaje.invalid && f.mensaje.touched"></textarea>
+
+          <div class="invalid-feedback" *ngIf="f.mensaje.touched && f.mensaje.errors">
+
+            <!-- Error: required -->
+            <div *ngIf="f.mensaje.errors?.required">
+              El mensaje es obligatorio.
+            </div>
+
+            <!-- Error: minlength -->
+            <div *ngIf="f.mensaje.errors?.minlength">
+              Mínimo {{ f.mensaje.errors?.minlength?.requiredLength }} caracteres.
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             BOTONES
+        ============================================================ -->
+        <div class="d-flex gap-2">
+
+          <!-- Botón de ENVIAR -->
+          <!-- type="submit": activa ngSubmit -->
+          <!-- [disabled]="submitting": se deshabilita mientras se procesa envío -->
+          <button type="submit" class="btn btn-primary flex-fill" [disabled]="submitting">
+            Enviar
+          </button>
+
+          <!-- Botón CANCELAR -->
+          <!-- type="button": no envía formulario -->
+          <!-- (click)="cancelar()": llama al método cancelar() -->
+          <button type="button" class="btn btn-secondary flex-fill" (click)="cancelar()" [disabled]="submitting">
+            Cancelar
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

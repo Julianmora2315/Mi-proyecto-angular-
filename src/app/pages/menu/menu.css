@@ -1,7 +1,7 @@
 .menu {
   padding: 3rem 2rem;
   min-height: calc(100vh - 200px);
-  background: linear-gradient(to bottom, #f7fafc 0%, #edf2f7 100%);
+  background: #1a1a1a;
 }
 
 .container {
@@ -12,14 +12,14 @@
 h1 {
   text-align: center;
   font-size: 2.5rem;
-  color: #2d3748;
+  color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
 .subtitle {
   text-align: center;
   font-size: 1.2rem;
-  color: #718096;
+  color: #a0a0a0;
   margin-bottom: 3rem;
 }
 
@@ -30,18 +30,18 @@ h1 {
 }
 
 .category {
-  background: white;
+  background: #2d2d2d;
   border-radius: 15px;
   padding: 2rem;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
 
 .category h2 {
-  color: #667eea;
+  color: #ff6b6b;
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 2px solid #e2e8f0;
+  border-bottom: 2px solid #3d3d3d;
 }
 
 .menu-items {
@@ -60,23 +60,23 @@ h1 {
 }
 
 .menu-item:hover {
-  background: #f7fafc;
+  background: #3d3d3d;
   transform: translateX(10px);
 }
 
 .item-info h3 {
-  color: #2d3748;
+  color: #ffffff;
   margin-bottom: 0.3rem;
   font-size: 1.1rem;
 }
 
 .item-info p {
-  color: #718096;
+  color: #a0a0a0;
   font-size: 0.9rem;
 }
 
 .item-price {
-  color: #667eea;
+  color: #ff6b6b;
   font-size: 1.3rem;
   font-weight: bold;
   min-width: 80px;

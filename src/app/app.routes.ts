@@ -4,7 +4,7 @@ import { AboutComponent } from './pages/about/about';
 import { ProductsComponent } from './pages/products/products';
 import { GalleryComponent } from './pages/gallery/gallery';
 import { MenuComponent } from './pages/menu/menu';
-
+import { Contact } from './pages/contact/contact';
 
 export const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -12,5 +12,6 @@ export const routes: Routes = [
   {path: 'productos', component: ProductsComponent},
   {path: 'galeria', component: GalleryComponent},
   {path: 'menu', component:MenuComponent},
+  {path: 'contact', component: Contact},
   {path: '**', redirectTo: ''}
 ]; 

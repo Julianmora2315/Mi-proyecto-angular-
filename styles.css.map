@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/styles.css"],
+  "sourcesContent": ["/* ============================================\r\n   SCROLLBAR PERSONALIZADO - ROJO\r\n============================================ */\r\n\r\n/* Para navegadores webkit (Chrome, Safari, Edge) */\r\n::-webkit-scrollbar {\r\n  width: 12px;\r\n  height: 12px;\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n  background: #1a1a1a;\r\n  border-radius: 10px;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n  background: #ff6b6b;\r\n  border-radius: 10px;\r\n  border: 2px solid #1a1a1a;\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\n  background: #ff5252;\r\n  box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);\r\n}\r\n\r\n::-webkit-scrollbar-thumb:active {\r\n  background: #ff3838;\r\n}\r\n\r\n/* Para Firefox */\r\n* {\r\n  scrollbar-width: thin;\r\n  scrollbar-color: #ff6b6b #1a1a1a;\r\n}\r\n\r\n/* Opcional: Hacer la scrollbar m\u00E1s delgada en hover */\r\n::-webkit-scrollbar {\r\n  width: 8px;\r\n  transition: width 0.3s;\r\n}\r\n\r\n::-webkit-scrollbar:hover {\r\n  width: 12px;\r\n}"],
+  "mappings": ";AAKA;AACE,SAAO;AACP,UAAQ;AACV;AAEA;AACE,cAAY;AACZ,iBAAe;AACjB;AAEA;AACE,cAAY;AACZ,iBAAe;AACf,UAAQ,IAAI,MAAM;AACpB;AAEA,yBAAyB;AACvB,cAAY;AACZ,cAAY,EAAE,EAAE,KAAK,KAAK,GAAG,EAAE,GAAG,EAAE,GAAG,EAAE;AAC3C;AAEA,yBAAyB;AACvB,cAAY;AACd;AAGA;AACE,mBAAiB;AACjB,mBAAiB,QAAQ;AAC3B;AAGA;AACE,SAAO;AACP,cAAY,MAAM;AACpB;AAEA,mBAAmB;AACjB,SAAO;AACT;",
+  "names": []
+}
